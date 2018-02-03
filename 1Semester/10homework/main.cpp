@@ -4,12 +4,11 @@
 
 using namespace std;
 
-int theEnd(int arrayOfTowns[], int numberOfTowns);
+int thereAreUncheckedCities(int arrayOfTowns[], int numberOfTowns);
 
 void initialization(int &numberOfTowns, int &numberOfRoads, int &numberOfCountries, int *&arrayOfCountries, int **&matrix, int &maxLength) {
     ifstream input("file.txt");
-    input >> numberOfTowns >> numberOfRoads;
-    
+
     cout << "Список смежности: " << endl;
     for (int i = 0; i < numberOfTowns; ++i) {
         matrix[i] = new int [3];
@@ -48,19 +47,24 @@ int main(int argc, char** argv) {
     int numberOfRoads = 0;
     int numberOfCountries = 0;
     int maxLength = 0;
+
+    ifstream input("file.txt");
+    input >> numberOfTowns >> numberOfRoads;
+    input.close();
+
     int *arrayOfCountries = new int[numberOfCountries];
     int **matrix = new int *[numberOfTowns];
-    
+
     initialization(numberOfTowns, numberOfRoads, numberOfCountries, arrayOfCountries, matrix, maxLength);
-    
+
     int *arrayOfTowns = new int[numberOfTowns];
     towns(arrayOfTowns, numberOfTowns, numberOfCountries, arrayOfCountries);
-    
+
     int minLength = maxLength;
     int town = -1;
     int dop = 0;
     for (int j = 0; j < numberOfCountries; ++j) {
-        for (int i = 0; i < numberOfTowns && theEnd(arrayOfTowns, numberOfTowns) != 0; ++i) {
+        for (int i = 0; i < numberOfTowns && thereAreUncheckedCities(arrayOfTowns, numberOfTowns) != 0; ++i) {
             cout << "столица сейчас " << arrayOfCountries[j] << endl;
             if (arrayOfTowns[i] == arrayOfCountries[j]) {
                 cout << "yes" << endl;
@@ -82,23 +86,23 @@ int main(int argc, char** argv) {
             }
         }
         for (int d = 0; d < numberOfTowns; ++d) {
-            if (d + 1 == town) { 
+            if (d + 1 == town) {
                 arrayOfTowns[d] = arrayOfCountries[dop];
                 cout << town << " присвоен столице" << arrayOfCountries[dop] << endl;
             }
         }
     }
-    
+
     for (int j = 0; j < numberOfCountries; ++j) {
         cout << arrayOfCountries[j] << " столице принадлежат города: ";
         for (int i = 0; i < numberOfTowns; ++i) {
             if (arrayOfTowns[i] == arrayOfCountries[j]) {
                 cout << i + 1;
-            } 
+            }
         }
         cout << endl;
     }
-    
+
     delete[] arrayOfTowns;
     delete[] arrayOfCountries;
     for (int i = 0; i < numberOfTowns; i++) {
@@ -108,7 +112,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-int theEnd(int arrayOfTowns[], int numberOfTowns) {
+int thereAreUncheckedCities(int arrayOfTowns[], int numberOfTowns) {
     for (int i = 0; i < numberOfTowns; ++i) {
         if (arrayOfTowns[i] == 0)
             return 1;
