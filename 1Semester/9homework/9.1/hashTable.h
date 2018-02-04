@@ -1,6 +1,6 @@
-#pragma once;
-#include "list.h";
-#include <string>;
+#pragma once
+#include "list.h"
+#include <string>
 
 struct HashTable;
 
@@ -20,7 +20,4 @@ void addToHashTable(HashTable *table, std::string value);
 void printHashTable(HashTable *table);
 
 // iувеличение счетчика
-void counterOfWods(std::string key, List *bucket);
-
-// значение хэш-функции
-int HashFunction(ElementType value);
+void counterOfWods(std::string &key, List *bucket);

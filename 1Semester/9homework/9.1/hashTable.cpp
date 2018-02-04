@@ -2,6 +2,7 @@
 #include "list.h"
 #include <iostream>
 #include <string>
+#include <math.h>
 
 using namespace std;
 
@@ -23,11 +24,12 @@ HashTable *createHashTable(int size)
     return result;
 }
 
-int HashFunction(string value)
+int hashFunction(string value)
 {
     int result = 0;
-    for (int i = 0; i < value.length(); ++i)
-        result = result + (value[i]) % 10;
+    for (int i = 0; i < value.length(); ++i) {
+        result = abs(result + (value[i]) % 10);
+    }
     return result;
 }
 
@@ -37,13 +39,14 @@ void deleteHashTable(HashTable *table)
     {
         clear(table->table[i]);
     }
+    delete[] table;
     delete table;
 }
 
 bool exist(string value, HashTable *table)
 {
     bool flag = false;
-    ListElement *temp = head(table->table[HashFunction(value) % table->size]);
+    ListElement *temp = head(table->table[hashFunction(value) % table->size]);
     while (temp != 0)
     {
         if (elementKey(temp) == value) {
@@ -67,7 +70,7 @@ void printHashTable(HashTable *table)
     }
 }
 
-void counterOfWods(string key, List *table)
+void counterOfWods(string &key, List *table)
 {
     ListElement *temp = head(table);
     while (temp != nullptr)
@@ -87,9 +90,9 @@ void addToHashTable(HashTable *table, string value)
     temp->count = 1;
     temp->key = value;
     if (exist(value, table)) {
-        counterOfWods(value, table->table[HashFunction(value) % table->size]);
+        counterOfWods(value, table->table[hashFunction(value) % table->size]);
     }
     else {
-        insert(table->table[HashFunction(value) % table->size], temp);
+        insert(table->table[hashFunction(value) % table->size], temp);
     }
 }
