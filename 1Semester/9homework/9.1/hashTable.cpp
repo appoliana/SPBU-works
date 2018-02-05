@@ -39,11 +39,11 @@ void deleteHashTable(HashTable *table)
     {
         clear(table->table[i]);
     }
-    delete[] table;
+    delete[] table->table;
     delete table;
 }
 
-bool exist(string value, HashTable *table)
+bool exist(string &value, HashTable *table)
 {
     bool flag = false;
     ListElement *temp = head(table->table[hashFunction(value) % table->size]);
@@ -70,7 +70,7 @@ void printHashTable(HashTable *table)
     }
 }
 
-void counterOfWods(string &key, List *table)
+void counterOfWords(const string &key, List *table)
 {
     ListElement *temp = head(table);
     while (temp != nullptr)
@@ -84,13 +84,13 @@ void counterOfWods(string &key, List *table)
     }
 }
 
-void addToHashTable(HashTable *table, string value)
+void addToHashTable(HashTable *table, string &value)
 {
     Value *temp = new Value;
     temp->count = 1;
     temp->key = value;
     if (exist(value, table)) {
-        counterOfWods(value, table->table[hashFunction(value) % table->size]);
+        counterOfWords(value, table->table[hashFunction(value) % table->size]);
     }
     else {
         insert(table->table[hashFunction(value) % table->size], temp);
