@@ -86,13 +86,13 @@ void counterOfWords(const string &key, List *table)
 
 void addToHashTable(HashTable *table, string &value)
 {
-    Value *temp = new Value;
-    temp->count = 1;
-    temp->key = value;
     if (exist(value, table)) {
         counterOfWords(value, table->table[hashFunction(value) % table->size]);
     }
     else {
+        Value *temp = new Value;
+        temp->count = 1;
+        temp->key = value;
         insert(table->table[hashFunction(value) % table->size], temp);
     }
 }
