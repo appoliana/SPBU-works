@@ -43,7 +43,7 @@ void deleteHashTable(HashTable *table)
     delete table;
 }
 
-bool exist(string &value, HashTable *table)
+bool exist(const string &value, HashTable *table)
 {
     bool flag = false;
     ListElement *temp = head(table->table[hashFunction(value) % table->size]);
@@ -84,7 +84,7 @@ void counterOfWords(const string &key, List *table)
     }
 }
 
-void addToHashTable(HashTable *table, string &value)
+void addToHashTable(HashTable *table, const string &value)
 {
     if (exist(value, table)) {
         counterOfWords(value, table->table[hashFunction(value) % table->size]);
@@ -96,3 +96,43 @@ void addToHashTable(HashTable *table, string &value)
         insert(table->table[hashFunction(value) % table->size], temp);
     }
 }
+
+int maxLengthOfList(HashTable *table) 
+{
+    int maxLength = 0;
+    int lengthOfList = 0;
+    for (int i = 0; i != table->size; i++)
+    {
+        ListElement *temp = head(table->table[i]);
+        while (temp != nullptr)
+        {
+            lengthOfList++;
+            temp = nextElement(temp);
+        }
+        if (lengthOfList > maxLength) 
+        {
+            maxLength = lengthOfList;
+        }
+        lengthOfList = 0;
+    }
+    return maxLength;
+}
+
+int middleLengthOfList(HashTable *table) 
+{
+    int middleLength = 0;
+    int lengthOfList = 0;
+    for (int i = 0; i != table->size; i++)
+    {
+        ListElement *temp = head(table->table[i]);
+        while (temp != nullptr)
+        {
+            lengthOfList++;
+            temp = nextElement(temp);
+        }
+        middleLength += lengthOfList;
+    }
+    middleLength = middleLength / table->size;
+    return middleLength;
+}
+

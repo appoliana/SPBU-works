@@ -8,19 +8,27 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    int size = 0;
+    double size = 0;
     cout << "Введите размерность хэш-таблицы" << endl;
     cin >> size;
     
     HashTable *hashTable = createHashTable(size);
     
     ifstream input("file.txt");
+    double counterOfWords = 0;
     while (!input.eof())
     {
         string word = "";
         input >> word;
+        counterOfWords++;
         addToHashTable(hashTable, word);
     }
+    
+    cout << "Коэфицент заполнения хэш-таблицицы: " << size / counterOfWords << endl;
+    
+    cout << "Максимальная длина списка в сегменте: " << maxLengthOfList(hashTable) << endl; 
+    
+    cout << "Средняя длина списка в сегменте: " << middleLengthOfList(hashTable) << endl; 
     
     printHashTable(hashTable);
     
