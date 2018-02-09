@@ -24,11 +24,11 @@ int main(int argc, char** argv)
         addToHashTable(hashTable, word);
     }
     
-    cout << "Коэфицент заполнения хэш-таблицицы: " << size / counterOfWords << endl;
+    cout << "Коэффицент заполнения хэш-таблицицы: " << counterOfWords / size << endl;
     
     cout << "Максимальная длина списка в сегменте: " << maxLengthOfList(hashTable) << endl; 
     
-    cout << "Средняя длина списка в сегменте: " << middleLengthOfList(hashTable) << endl; 
+    cout << "Средняя длина списка в сегменте: " << averageLengthOfList(hashTable) << endl; 
     
     printHashTable(hashTable);
     
