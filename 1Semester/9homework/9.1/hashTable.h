@@ -26,4 +26,4 @@ void counterOfWords(const std::string &key, List *bucket);
 int maxLengthOfList(HashTable *table);
 
 // подсчет средней длины списка в сегменте таблицы
-int middleLengthOfList(HashTable *table) ;
+double averageLengthOfList(HashTable *table);

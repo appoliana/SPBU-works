@@ -118,10 +118,10 @@ int maxLengthOfList(HashTable *table)
     return maxLength;
 }
 
-int middleLengthOfList(HashTable *table) 
+double averageLengthOfList(HashTable *table) 
 {
-    int middleLength = 0;
-    int lengthOfList = 0;
+    double averageLength = 0;
+    double lengthOfList = 0;
     for (int i = 0; i != table->size; i++)
     {
         ListElement *temp = head(table->table[i]);
@@ -130,9 +130,11 @@ int middleLengthOfList(HashTable *table)
             lengthOfList++;
             temp = nextElement(temp);
         }
-        middleLength += lengthOfList;
+        averageLength += lengthOfList;
+        lengthOfList = 0;
     }
-    middleLength = middleLength / table->size;
-    return middleLength;
+    //cout << "(всего сегментов : " << averageLength << ") ";
+    averageLength = averageLength / table->size;
+    return averageLength;
 }
 
