@@ -52,6 +52,7 @@ void clear(List *list)
         delete temp2;
     }
     delete list;
+    delete temp->value;
 }
 
 ListElement* nextElement(ListElement *element)
