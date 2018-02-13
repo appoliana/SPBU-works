@@ -49,10 +49,10 @@ void clear(List *list)
     {
         ListElement *temp2 = temp;
         temp = temp->next;
+        delete temp2->value;
         delete temp2;
     }
     delete list;
-    delete temp->value;
 }
 
 ListElement* nextElement(ListElement *element)
