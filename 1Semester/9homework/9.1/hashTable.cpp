@@ -133,7 +133,6 @@ double averageLengthOfList(HashTable *table)
         averageLength += lengthOfList;
         lengthOfList = 0;
     }
-    //cout << "(всего сегментов : " << averageLength << ") ";
     averageLength = averageLength / table->size;
     return averageLength;
 }
