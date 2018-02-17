@@ -16,9 +16,7 @@ bool thereAreUncheckedTowns(const vector<int>& towns) {
 
 void printResult(int numberOfCountries, vector<int> &towns);
 
-void searchOfTheAnswer(vector<int> &towns, int &currentCountry, vector<int> &edges);
-
-void printDates(vector<int> &edges);
+void searchOfTheAnswer(vector<int> &towns, vector<int> &edges);
 
 struct Edge {
     const int first;
@@ -56,17 +54,6 @@ int main(int argc, char** argv) {
     }
     input.close();
 
-    printDates(edges);
-
-    searchOfTheAnswer(towns, currentCountry, edges);
-
-    printResult(numberOfCountries, towns);
-
-    return 0;
-}
-
-void printDates(vector<int> &edges)
-{
     for (int townIndex = 0; townIndex < edges.size(); ++townIndex) {
         cout << "Town " << townIndex << ":";
         for (int edgeIndex = 0; edgeIndex < edges[townIndex].size(); ++edgeIndex) {
@@ -77,9 +64,15 @@ void printDates(vector<int> &edges)
     }
 
     cout << endl;
+
+    searchOfTheAnswer(towns, edges);
+
+    printResult(numberOfCountries, towns);
+
+    return 0;
 }
 
-void searchOfTheAnswer(vector<int> &towns, int &currentCountry, vector<int> &edges)
+void searchOfTheAnswer(vector<int> &towns, vector<int> &edges)
 {
     int currentCountry = 0;
     while (thereAreUncheckedTowns(towns)) {
@@ -96,7 +89,7 @@ void searchOfTheAnswer(vector<int> &towns, int &currentCountry, vector<int> &edg
                     int secondTown = edge.second;
                     if (towns[secondTown] == -1) {
                         int length = edge.length;
-                        if ((minLength == -1) || length < minLength {
+                        if ((minLength == -1) || length < minLength) {
                             minLength = length;
                             nearestNewTown = secondTown;
                         }
