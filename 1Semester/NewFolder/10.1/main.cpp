@@ -14,11 +14,11 @@ bool thereAreUncheckedTowns(const vector<int>& towns) {
     return false;
 }
 
-void printResult(int numberOfCountries, int[] towns);
+void printResult(int numberOfCountries, vector<int> &towns);
 
-void searchOfTheAnswer(towns, currentCountry, edges);
+void searchOfTheAnswer(vector<int> &towns, int &currentCountry, vector<int> &edges);
 
-void printDates(edges);
+void printDates(vector<int> &edges);
 
 struct Edge {
     const int first;
@@ -65,7 +65,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void printDates(int[] &edges)
+void printDates(vector<int> &edges)
 {
     for (int townIndex = 0; townIndex < edges.size(); ++townIndex) {
         cout << "Town " << townIndex << ":";
@@ -79,7 +79,7 @@ void printDates(int[] &edges)
     cout << endl;
 }
 
-void searchOfTheAnswer(int[] &towns, int &currentCountry, int[] &edges)
+void searchOfTheAnswer(vector<int> &towns, int &currentCountry, vector<int> &edges)
 {
     int currentCountry = 0;
     while (thereAreUncheckedTowns(towns)) {
@@ -111,7 +111,7 @@ void searchOfTheAnswer(int[] &towns, int &currentCountry, int[] &edges)
     }
 }
 
-void printResult(int numberOfCountries, int[] towns)
+void printResult(int numberOfCountries, vector<int>)
 {
     cout << endl;
     cout << "Results:" << endl;
