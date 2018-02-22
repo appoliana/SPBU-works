@@ -14,11 +14,9 @@ bool thereAreUncheckedTowns(const vector<int>& towns) {
     return false;
 }
 
-void printResult(int numberOfCountries, int[] towns);
+void printResult(int numberOfCountries, vector<int> &towns);
 
-void searchOfTheAnswer(towns, currentCountry, edges);
-
-void printDates(edges);
+void searchOfTheAnswer(vector<int> &towns, vector<vector<Edge>> &edges, int numberOfCountries);
 
 struct Edge {
     const int first;
@@ -56,17 +54,6 @@ int main(int argc, char** argv) {
     }
     input.close();
 
-    printDates(edges);
-
-    searchOfTheAnswer(towns, currentCountry, edges);
-
-    printResult(numberOfCountries, towns);
-
-    return 0;
-}
-
-void printDates(int[] &edges)
-{
     for (int townIndex = 0; townIndex < edges.size(); ++townIndex) {
         cout << "Town " << townIndex << ":";
         for (int edgeIndex = 0; edgeIndex < edges[townIndex].size(); ++edgeIndex) {
@@ -77,9 +64,15 @@ void printDates(int[] &edges)
     }
 
     cout << endl;
+
+    searchOfTheAnswer(towns, edges, numberOfCountries);
+
+    printResult(numberOfCountries, towns);
+
+    return 0;
 }
 
-void searchOfTheAnswer(int[] &towns, int &currentCountry, int[] &edges)
+void searchOfTheAnswer(vector<int> &towns, vector<vector<Edge>> &edges, int numberOfCountries)
 {
     int currentCountry = 0;
     while (thereAreUncheckedTowns(towns)) {
@@ -96,7 +89,7 @@ void searchOfTheAnswer(int[] &towns, int &currentCountry, int[] &edges)
                     int secondTown = edge.second;
                     if (towns[secondTown] == -1) {
                         int length = edge.length;
-                        if ((minLength == -1) || length < minLength {
+                        if ((minLength == -1) || length < minLength) {
                             minLength = length;
                             nearestNewTown = secondTown;
                         }
@@ -111,7 +104,7 @@ void searchOfTheAnswer(int[] &towns, int &currentCountry, int[] &edges)
     }
 }
 
-void printResult(int numberOfCountries, int[] towns)
+void printResult(int numberOfCountries, vector<int>)
 {
     cout << endl;
     cout << "Results:" << endl;
@@ -125,11 +118,3 @@ void printResult(int numberOfCountries, int[] towns)
         cout << endl;
     }
 }
-
-
-
-
-
-
-
-
