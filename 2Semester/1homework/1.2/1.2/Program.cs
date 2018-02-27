@@ -1,19 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _1._2
 {
     class Program
     {
-        public static int fibonacciNumbers(int n)
+        public static int FibonacciNumbers(int n)
         {
             if (n == 1 || n == 2)
+            {
                 return 1;
+            }
             if (n > 2)
-                return fibonacciNumbers(n - 1) + fibonacciNumbers(n - 2);
+            {
+                return FibonacciNumbers(n - 1) + FibonacciNumbers(n - 2);
+            }
             return 0;
         }
 
@@ -23,8 +23,7 @@ namespace _1._2
             Console.Write("Введите число, для которого хотите посчитать число Фибоначчи: ");
             value = Convert.ToInt32(Console.ReadLine());
             int result = fibonacciNumbers(value);
-            Console.Write("Резултьат: " + result);
-            int t = new int();
+            Console.Write("Результат: " + result);
         }
     }
 }

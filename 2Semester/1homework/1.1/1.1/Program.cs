@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApp1
+namespace 1.1
 {
     class Program
     {
@@ -9,7 +9,7 @@ namespace ConsoleApp1
             int value = 0;
             int result = 1;
             Console.Write("Enter the positive number you want to find the factorial: ");
-            value = Convert.ToInt32 (Console.ReadLine());
+            value = Convert.ToInt32(Console.ReadLine());
             for (int i = 1; i <= value; ++i)
             {
                 result *= i;
