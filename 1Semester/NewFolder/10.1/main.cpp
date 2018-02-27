@@ -14,10 +14,6 @@ bool thereAreUncheckedTowns(const vector<int>& towns) {
     return false;
 }
 
-void printResult(int numberOfCountries, vector<int> &towns);
-
-void searchOfTheAnswer(vector<int> &towns, vector<vector<Edge>> &edges, int numberOfCountries);
-
 struct Edge {
     const int first;
     const int second;
@@ -28,6 +24,10 @@ struct Edge {
         , length(length) {
     }
 };
+
+void printResult(int numberOfCountries, vector<int> &towns);
+
+void searchOfTheAnswer(vector<int> &towns, vector<vector<Edge>> &edges, int numberOfCountries);
 
 int main(int argc, char** argv) {
     ifstream input("file.txt");
