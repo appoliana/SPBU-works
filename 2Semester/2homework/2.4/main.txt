@@ -1,0 +1,174 @@
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		int choose = 0;
+		Console.WriteLine("Введите 1 для создания стека на массиве, 2 - для создания стека на списке, 0 - для завершения работы программы: ");
+		Console.ReadLine(choose);
+		var stack;
+		switch (choose)
+		{
+			case 1:
+			{
+				stack = new ArrayStack;
+				break;
+			}
+			case 2:
+			{
+				stack = new ListStack;
+				break;
+			}
+			case 0:
+			{
+				Console.WriteLine("Спасибо, что воспользовались нашим калькулятором =) ");
+				return;
+			}
+			default:
+			{
+				Console.WriteLine("Введена неопознанная команда =( ");
+				return;
+			}
+		}
+		Console.WriteLine(«Введите через пробел первое число, операцию (‘+’, ‘-’, ‘/’ или ‘*’), второе число: »);
+		var number1 = 0;
+		var operator = ‘ ’;
+		var number2 = 0;
+		Console.ReadLine(number1);
+		stack.Push(Console.ReadLine(number1);
+		Console.ReadLine(operator);
+		Console.ReadLine(number2);
+		stack.Push(Console.ReadLine(number2);
+		CountExcpression(operator);
+		Console.WriteLine(«Результат вычисления = » + stack.Pop());
+	}
+}
+
+public class ListStack<T> : IStack<T>
+{
+	private class StackElement
+        {
+        public int Value { 
+        	get; 
+        	set; 
+        }
+        public StackElement Next { 
+        	get; 
+        	set; 
+        }
+    }
+	
+	public void Push(T value)
+	{
+		int newElement = new StackElement()
+        {
+            Next = head,
+            Value = value
+        };
+        head = newElement;
+	}
+	
+	private StackElement head = null;
+	
+	public int Pop()
+	{
+		if (head == null)
+        {
+            Console.WriteLine("Stack is empty :(");
+        }
+        int temp = head.Value;
+        head = head.Next;
+        return temp;	
+	}
+	
+	public bool IsEmpty()
+	{
+		return head == null;
+	}
+}
+
+public class ArrayStack<T> : Istack<T>
+{
+    private T [] array; 
+    private const int capacity = 50; 
+    private int size; 
+
+    public CStack()
+    { 
+        this.size = 0;
+        this.array = new T [capacity];
+    }
+
+    public bool isEmpty() 
+    {
+        return this.size == 0;
+    }
+
+    public virtual int Count 
+    {
+        get
+        {
+            return this.size;
+        }
+    }
+
+    public T Pop() 
+    {
+        if (this.size == 0)
+        {	
+            throw new InvalidOperationException();
+        }
+        return this.array[--this.size];
+    }
+
+    public void Push(T newElement)
+    {
+        if (this.size == this.array.Length) //если у нас переполнение
+        { 
+            T[] newArray = new T[2 * this.array.Length];
+            Array.Copy(this.array, 0, newArray, 0, this.size);
+            this.array = newArray; 
+        } 
+        this.array[this.size++] = newElement; 
+    }
+}
+
+public class Calculate
+{
+	private void CountExcpression(char symbol)
+	{
+		int firstNumber = stack.Pop();
+		int secondNumber = stack.Pop();
+		switch (symbol)
+		{
+			case '+':
+			{
+				stack.Push(firstNumber + secondNumber);
+				break;
+			}
+			case '-':
+			{
+				stack.Push(firstNumber - secondNumber);
+				break;
+			}
+			case '/':
+			{
+				stack.Push(firstNumber / secondNumber);
+				break;
+			}
+			case '*':
+			{
+				stack.Push(firstNumber * secondNumber);
+				break;
+			}
+		}
+	}
+}
+
+public interface IStack
+{
+	void Push(int number);
+	int Pop();
+	bool IsEmpty();
+}
