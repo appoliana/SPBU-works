@@ -22,8 +22,9 @@ namespace _1._2
             int value = 0;
             Console.Write("Введите число, для которого хотите посчитать число Фибоначчи: ");
             value = Convert.ToInt32(Console.ReadLine());
-            int result = fibonacciNumbers(value);
+            int result = FibonacciNumbers(value);
             Console.Write("Результат: " + result);
+            Console.ReadLine();
         }
     }
 }
