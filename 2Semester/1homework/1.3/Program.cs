@@ -6,9 +6,9 @@ namespace _1._3
     {
         public static void Sort(int[] array)
         {
-            for (int i = 0, i < array.length - 2; ++i)
+            for (int i = 0; i < array.Length - 1; ++i)
             {
-                for (int j = 0; j < array.length - 2; ++j)
+                for (int j = 0; j < array.Length - 1; ++j)
                 {
                     if (array[j] > array[j + 1])
                     {
@@ -28,7 +28,7 @@ namespace _1._3
             Console.Write("Введите элементы массива: ");
             for (int i = 0; i < length; ++i)
             {
-                array[i] = Console.ReadLine();
+                array[i] = Convert.ToInt32(Console.ReadLine());
             }
             Sort(array);
             Console.Write("Oтсортированный массив: ");
@@ -36,6 +36,7 @@ namespace _1._3
             {
                 Console.Write(array[i] + " ");
             }
+            Console.ReadLine();
         }
     }
 }
