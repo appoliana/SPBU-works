@@ -1,0 +1,12 @@
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\b\Stack.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\b\Stack.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\b\Stack.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\b\Stack.Tests\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\b\Stack.Tests\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\b\Stack.Tests\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\b\Stack.Tests\bin\Debug\Stack.Tests.dll
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\b\Stack.Tests\bin\Debug\Stack.Tests.pdb
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\i\Stack.Tests\Debug\Stack.Tests.csprojResolveAssemblyReference.cache
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\i\Stack.Tests\Debug\Stack.Tests.csproj.CoreCompileInputs.cache
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\i\Stack.Tests\Debug\Stack.Tests.dll
+C:\Users\artik\source\repos\Testing\.vs\Testing\lut\0\i\Stack.Tests\Debug\Stack.Tests.pdb
