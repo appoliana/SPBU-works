@@ -17,15 +17,15 @@ namespace _1._5
         public static void SortAndPrint(int[,] array, int size)
         {
             Console.WriteLine();
-            for (int i = 0; i < size - 2 ++i)
+            for (int i = 0; i < size - 1; ++i)
             {
-                for (int j = 0; j < size - 2; ++j)
-                { 
+                for (int j = 0; j < size - 1; ++j)
+                {
                     if (array[0, j] > array[0, j + 1])
                     {
                         SwapColumn(array, j, size);
                     }
-                ]
+                }
             }
             for (int i = 0; i < size; ++i)
             {
@@ -58,6 +58,4 @@ namespace _1._5
             Console.ReadLine();
         }
     }
-
 }
-    
