@@ -19,14 +19,15 @@ namespace _1._4
                 {
                     if (dop % 2 == 0)
                     {
-                        --i;   
+                        --i;
                     }
                     else
                     {
                         ++i;
                     }
-                Console.Write(array[i, j] + " ");
-                ++dop1;
+                    Console.Write(array[i, j] + " ");
+                    ++dop1;
+                    ++count;
                 }
                 int dop2 = 0;
                 while (dop2 != dop)
@@ -39,24 +40,28 @@ namespace _1._4
                     {
                         ++j;
                     }
-                Console.Write(array[i, j] + " ");
-                ++dop2;
+                    Console.Write(array[i, j] + " ");
+                    ++dop2;
+                    ++count;
                 }
-            }
-        ++dop;
-        ++count;
+                ++dop;
+                if (count == endOfWhile)
+                {
+                    break;
+                }
+            } 
         }
         static void Main(string[] args)
         {
             int size = 0;
             Console.Write("Введите размерность массива: ");
             size = Convert.ToInt32(Console.ReadLine());
-            int[,] array = [size, size];
+            int[,] array = new int[size, size];
             Random rand = new Random();
 
-            for ( int i = 0; i < size; ++i)
+            for (int i = 0; i < size; ++i)
             {
-                for(int j = 0; j < size; ++j)
+                for (int j = 0; j < size; ++j)
                 {
                     array[i, j] = rand.Next(0, 10);
                     Console.Write(array[i, j] + " ");
@@ -65,6 +70,7 @@ namespace _1._4
             }
             Print(array, size);
             Console.ReadLine();
+            Console.WriteLine();
         }
     }
 }
