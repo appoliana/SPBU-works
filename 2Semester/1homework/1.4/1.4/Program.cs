@@ -4,15 +4,14 @@ namespace _1._4
 {
     class Program
     {
-        public static void Print(int[,] array)
+        public static void Print(int[,] array, int size)
         {
-            Console.Write(array[array.Length / 2 + 1, array.Length / 2 + 1] + " ");
-            int endOfWhile = array.Length * array.Length;
+            Console.Write(array[(size / 2) + 1, (size/ 2) + 1] + " ");
             int dop = 1;
             int count = 1;
-            int i = array.Length / 2 + 1;
-            int j = array.Length / 2 + 1;
-            while (count != endOfWhile)
+            int i = size / 2 + 1;
+            int j = size / 2 + 1;
+            while (count < array.Length)
             {
                 int dop1 = 0;
                 while (dop1 != dop)
@@ -45,17 +44,17 @@ namespace _1._4
                     ++count;
                 }
                 ++dop;
-                if (count == endOfWhile)
+                if (count == array.Length)
                 {
                     break;
                 }
-            } 
+            }
         }
+
         static void Main(string[] args)
         {
-            int size = 0;
             Console.Write("Введите размерность массива: ");
-            size = Convert.ToInt32(Console.ReadLine());
+            int size = Convert.ToInt32(Console.ReadLine());
             int[,] array = new int[size, size];
             Random rand = new Random();
 
@@ -68,9 +67,11 @@ namespace _1._4
                 }
                 Console.WriteLine();
             }
-            Print(array);
+            Console.WriteLine();
+            Print(array, size);
             Console.ReadLine();
             Console.WriteLine();
         }
     }
 }
+
