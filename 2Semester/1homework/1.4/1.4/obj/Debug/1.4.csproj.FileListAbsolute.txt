@@ -1,7 +1,0 @@
-C:\Users\Пользователь\Desktop\1.4\1.4\bin\Debug\1.4.exe.config
-C:\Users\Пользователь\Desktop\1.4\1.4\bin\Debug\1.4.exe
-C:\Users\Пользователь\Desktop\1.4\1.4\bin\Debug\1.4.pdb
-C:\Users\Пользователь\Desktop\1.4\1.4\obj\Debug\1.4.csprojResolveAssemblyReference.cache
-C:\Users\Пользователь\Desktop\1.4\1.4\obj\Debug\1.4.csproj.CoreCompileInputs.cache
-C:\Users\Пользователь\Desktop\1.4\1.4\obj\Debug\1.4.exe
-C:\Users\Пользователь\Desktop\1.4\1.4\obj\Debug\1.4.pdb
