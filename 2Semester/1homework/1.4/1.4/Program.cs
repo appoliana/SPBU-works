@@ -1,20 +1,20 @@
 ﻿using System;
 
-namespace _1._4
+namespace traversingTheArrayInASpiral
 {
     class Program
     {
-        public static void Print(int[,] array, int size)
+        public static void Print(int[,] array)
         {
-            Console.Write(array[(size / 2) + 1, (size/ 2) + 1] + " ");
+            Console.Write(array[(array.GetLength(0) / 2), (array.GetLength(0) / 2)] + " ");
             int dop = 1;
             int count = 1;
-            int i = size / 2 + 1;
-            int j = size / 2 + 1;
+            int i = array.GetLength(0) / 2;
+            int j = array.GetLength(1) / 2 ;
             while (count < array.Length)
             {
-                int dop1 = 0;
-                while (dop1 != dop)
+                int наСколькоНамНужноСейчасПодвинутьсяВнизИлиВверх = 0;
+                while (наСколькоНамНужноСейчасПодвинутьсяВнизИлиВверх != dop)
                 {
                     if (dop % 2 == 0)
                     {
@@ -25,11 +25,15 @@ namespace _1._4
                         ++i;
                     }
                     Console.Write(array[i, j] + " ");
-                    ++dop1;
+                    ++наСколькоНамНужноСейчасПодвинутьсяВнизИлиВверх;
                     ++count;
+                    if (count == array.Length)
+                    {
+                        return;
+                    }
                 }
-                int dop2 = 0;
-                while (dop2 != dop)
+                int наСколькоНамНужноСейчасПодвинутьсяВправоИлиВлево = 0;
+                while (наСколькоНамНужноСейчасПодвинутьсяВправоИлиВлево != dop)
                 {
                     if (dop % 2 == 0)
                     {
@@ -40,14 +44,14 @@ namespace _1._4
                         ++j;
                     }
                     Console.Write(array[i, j] + " ");
-                    ++dop2;
+                    ++наСколькоНамНужноСейчасПодвинутьсяВправоИлиВлево;
                     ++count;
+                    if (count == array.Length)
+                    {
+                        return;
+                    }
                 }
                 ++dop;
-                if (count == array.Length)
-                {
-                    break;
-                }
             }
         }
 
@@ -55,6 +59,12 @@ namespace _1._4
         {
             Console.Write("Введите размерность массива: ");
             int size = Convert.ToInt32(Console.ReadLine());
+            if (size % 2 == 0)
+            {
+                Console.Write("Нужно ввести массив нечетной размерности.");
+                Console.ReadLine();
+                return;
+            }
             int[,] array = new int[size, size];
             Random rand = new Random();
 
@@ -68,7 +78,7 @@ namespace _1._4
                 Console.WriteLine();
             }
             Console.WriteLine();
-            Print(array, size);
+            Print(array);
             Console.ReadLine();
             Console.WriteLine();
         }
