@@ -1,0 +1,7 @@
+C:\Users\Пользователь\Desktop\QueueWithPriority\QueueWithPriority\bin\Debug\QueueWithPriority.exe.config
+C:\Users\Пользователь\Desktop\QueueWithPriority\QueueWithPriority\bin\Debug\QueueWithPriority.exe
+C:\Users\Пользователь\Desktop\QueueWithPriority\QueueWithPriority\bin\Debug\QueueWithPriority.pdb
+C:\Users\Пользователь\Desktop\QueueWithPriority\QueueWithPriority\obj\Debug\QueueWithPriority.csprojResolveAssemblyReference.cache
+C:\Users\Пользователь\Desktop\QueueWithPriority\QueueWithPriority\obj\Debug\QueueWithPriority.csproj.CoreCompileInputs.cache
+C:\Users\Пользователь\Desktop\QueueWithPriority\QueueWithPriority\obj\Debug\QueueWithPriority.exe
+C:\Users\Пользователь\Desktop\QueueWithPriority\QueueWithPriority\obj\Debug\QueueWithPriority.pdb
