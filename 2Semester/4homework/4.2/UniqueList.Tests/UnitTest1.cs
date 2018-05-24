@@ -6,12 +6,12 @@ namespace UniqueList.Tests
     [TestClass]
     public class UniqueListTests
     {
-        private UniqueListClass.UniqueList list;
+        private UniqueList list;
 
         [TestInitialize]
         public void Init()
         {
-            this.list = new UniqueListClass.UniqueList();
+            this.list = new UniqueList();
         }
 
         [TestMethod]

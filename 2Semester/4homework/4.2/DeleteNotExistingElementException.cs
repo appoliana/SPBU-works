@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DeleteNotExistingElementException
+namespace UniqueList
 {
     [Serializable]
     public class DeleteNotExistingElementException : ApplicationException

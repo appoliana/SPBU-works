@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UniqueListClass
+namespace UniqueList
 {
     public class List
     {
@@ -24,6 +24,10 @@ namespace UniqueListClass
         {
             Console.WriteLine("Список: ");
             var currentElement = head;
+            if (currentElement == null)
+            {
+                return;
+            }
             while (currentElement.Next != null)
             {
                 Console.WriteLine(currentElement.Value + " ");
@@ -54,10 +58,14 @@ namespace UniqueListClass
             currentElement.Next = newElement;
         }
 
-        public bool BinarySearch(int value)
+        public bool IsElement(int value)
         {
             var currentElement = head;
-            while (currentElement.Next != null)
+            if (currentElement == null)
+            {
+                return false;
+            }
+            while (currentElement != null)
             {
                 if (currentElement.Value == value)
                 {
@@ -72,7 +80,7 @@ namespace UniqueListClass
         {
             if (head == null)
             {
-                throw new DeleteNotExistingElementException("This element does not existed!");
+                throw new DeleteNotExistingElementException();
             }
             if (head.Value == value)
             {
@@ -96,7 +104,7 @@ namespace UniqueListClass
                 }
                 currentElement = currentElement.Next;
             }
-            throw new DeleteNotExistingElementException("This element does not existed!");
+            throw new DeleteNotExistingElementException();
         }
     }
 }

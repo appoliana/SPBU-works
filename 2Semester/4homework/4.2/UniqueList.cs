@@ -1,49 +1,16 @@
 ﻿using System;
 
-namespace UniqueListClass
+namespace UniqueList
 {
     public class UniqueList : List
     {
-        public new class ListElement
-        {
-            public int Value
-            {
-                get;
-                set;
-            }
-            public ListElement Next
-            {
-                get;
-                set;
-            }
-        }
-
-        private ListElement head = null;
-
         public override void Add(int value)
         {
-            var newElement = new ListElement()
+            if (IsElement(value))
             {
-                Value = value,
-                Next = null
-            };
-
-            if (head == null)
-            {
-                head = newElement;
-                return;
+                throw new AddExistingElementException();
             }
-
-            var currentElement = head;
-            while (currentElement.Next != null)
-            {
-                if (currentElement.Value == newElement.Value)
-                {
-                    throw new AddExistingElementException("This element has already existed!");
-                }
-                currentElement = currentElement.Next;
-            }
-            currentElement.Next = newElement;
+            base.Add(value);
         }
     }
 }

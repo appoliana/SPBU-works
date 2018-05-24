@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AddExistingElementException
+namespace UniqueList
 {
     [Serializable]
     public class AddExistingElementException : ApplicationException
