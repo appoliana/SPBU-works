@@ -1,6 +1,6 @@
 ﻿namespace Clock
 {
-    partial class Form1
+    partial class ClockForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.clockLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // clockLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(105, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 86);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "00:00:00";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.clockLabel.AutoSize = true;
+            this.clockLabel.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clockLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.clockLabel.Location = new System.Drawing.Point(105, 75);
+            this.clockLabel.Name = "clockLabel";
+            this.clockLabel.Size = new System.Drawing.Size(275, 86);
+            this.clockLabel.TabIndex = 0;
+            this.clockLabel.Text = "00:00:00";
+            this.clockLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -53,18 +53,18 @@
             this.label2.Size = new System.Drawing.Size(0, 47);
             this.label2.TabIndex = 1;
             // 
-            // Form1
+            // ClockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
             this.ClientSize = new System.Drawing.Size(476, 243);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.clockLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "ClockForm";
+            this.Text = "Clock";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -73,7 +73,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label clockLabel;
         private System.Windows.Forms.Label label2;
     }
 }

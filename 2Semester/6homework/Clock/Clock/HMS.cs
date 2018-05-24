@@ -2,9 +2,12 @@
 
 namespace Clock
 {
-    class HMS
+    /// <summary>
+    ///  Assing "0" to the beginning or deduce time.
+    /// </summary>
+    class HoursMinutesSecounds
     {
-        public HMS (DateTime dateTime)
+        public HoursMinutesSecounds(DateTime dateTime)
         {
             if (dateTime.Hour < 10)
             {
@@ -33,6 +36,7 @@ namespace Clock
                 Secound = dateTime.Second.ToString();
             }
         }
+
         public string Hour { get; }
         public string Minute { get; }
         public string Secound { get; }

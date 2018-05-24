@@ -5,34 +5,34 @@ using System.Windows.Forms;
 namespace Clock
 {
     delegate void SendTime(string t);
-    public partial class Form1 : Form
+    public partial class ClockForm : Form
     {
-        SendTime sT;
-        DateTime dT;
-        HMS hms;
+        private SendTime sendTime;
+        private DateTime dateTime;
+        private HoursMinutesSecounds hoursMinutesSecounds;
         private void CountSeconds()
         {
-            sT = new SendTime(SendSeconds);
+            sendTime = new SendTime(SendSeconds);
 
             while (true)
             {
-                dT = DateTime.Now;
+                dateTime = DateTime.Now;
 
-                hms = new HMS(dT);
-                SendSeconds($"{hms.Hour}:{hms.Minute}:{hms.Secound}");
+                hoursMinutesSecounds = new HoursMinutesSecounds(dateTime);
+                SendSeconds($"{hoursMinutesSecounds.Hour}:{hoursMinutesSecounds.Minute}:{hoursMinutesSecounds.Secound}");
                 Thread.Sleep(1000);
             }
         }
 
         public void SendSeconds(string text)
         {
-            if (label1.InvokeRequired)
+            if (clockLabel.InvokeRequired)
             {
-                Invoke(sT, new object[] { text });
+                Invoke(sendTime, new object[] { text });
             }
             else
             {
-                label1.Text = text;
+                clockLabel.Text = text;
             }
         }
     }
