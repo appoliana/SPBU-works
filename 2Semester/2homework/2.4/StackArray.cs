@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CalculatorClass
+namespace StackCalculator
 {
     public class ArrayStack : IStack
     {
@@ -8,24 +8,18 @@ namespace CalculatorClass
         private const int capacity = 50;
         private int size;
 
-        public void CreateStack()
+        public ArrayStack()
         {
             this.size = 0;
             this.array = new int[capacity];
         }
 
-        public bool isEmpty()
+        public bool IsEmpty()
         {
             return this.size == 0;
         }
 
-        public virtual int Count
-        {
-            get
-            {
-                return this.size;
-            }
-        }
+        public virtual int Count => this.size;
 
         public int Pop()
         {

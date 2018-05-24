@@ -1,10 +1,15 @@
 ﻿using System;
 
-namespace CalculatorClass
+namespace StackCalculator
 {
     public class Calculator
     {
-        public void CountExcpression(char symbol)
+        private IStack stack;
+        public Calculator(IStack stack)
+        {
+            this.stack = stack;
+        }
+        public void CountExpression(char symbol)
         {
             int secondNumber = stack.Pop();
             int firstNumber = stack.Pop();

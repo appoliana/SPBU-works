@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CalculatorClass
+namespace StackCalculator
 {
     public class ListStack : IStack
     {
@@ -35,15 +35,13 @@ namespace CalculatorClass
             if (head == null)
             {
                 Console.WriteLine("Stack is empty :(");
+                throw new InvalidOperationException();
             }
             int temp = head.Value;
             head = head.Next;
             return temp;
         }
 
-        public bool IsEmpty()
-        {
-            return head == null;
-        }
+        public bool IsEmpty() => head == null;
     }
 }
