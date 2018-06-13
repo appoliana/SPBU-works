@@ -1,0 +1,2 @@
+C:\Users\artik\source\repos\4.2\UniqueList.Tests\obj\Debug\UniqueList.Tests.csprojResolveAssemblyReference.cache
+C:\Users\artik\source\repos\4.2\UniqueList.Tests\obj\Debug\UniqueList.Tests.csproj.CoreCompileInputs.cache
