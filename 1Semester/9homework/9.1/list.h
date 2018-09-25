@@ -1,4 +1,4 @@
-#pragma once;
+#pragma once
 #include <string>
 
 struct ListElement;
@@ -13,13 +13,13 @@ struct Value
 
 typedef Value *ElementType;
 
-// сощдание списка
+// создание списка
 List *createList();
 
 // вернуть указатель на голову
 ListElement *head(List *list);
 
-// вернуть количетсво
+// вернуть количество
 int elementCount(ListElement *element); 
 
 // добавление в список
@@ -31,7 +31,7 @@ void increaseElementCounter(ListElement *element);
 // вернуть указатель на следующий элемент
 ListElement* nextElement(ListElement *element);
 
-// вернуться значение ключа
+// значение ключа, по которому происходит обращение к элементу
 std::string elementKey(ListElement *element);
 
 // удаление списка

@@ -2,6 +2,7 @@
 #include "list.h"
 #include <iostream>
 #include <string>
+#include <math.h>
 
 using namespace std;
 
@@ -23,11 +24,12 @@ HashTable *createHashTable(int size)
     return result;
 }
 
-int HashFunction(string value)
+int hashFunction(string value)
 {
     int result = 0;
-    for (int i = 0; i < value.length(); ++i)
-        result = result + (value[i]) % 10;
+    for (int i = 0; i < value.length(); ++i) {
+        result = abs(result + (value[i]) % 10);
+    }
     return result;
 }
 
@@ -37,13 +39,14 @@ void deleteHashTable(HashTable *table)
     {
         clear(table->table[i]);
     }
+    delete[] table->table;
     delete table;
 }
 
-bool exist(string value, HashTable *table)
+bool exist(const string &value, HashTable *table)
 {
     bool flag = false;
-    ListElement *temp = head(table->table[HashFunction(value) % table->size]);
+    ListElement *temp = head(table->table[hashFunction(value) % table->size]);
     while (temp != 0)
     {
         if (elementKey(temp) == value) {
@@ -67,7 +70,7 @@ void printHashTable(HashTable *table)
     }
 }
 
-void counterOfWods(string key, List *table)
+void counterOfWords(const string &key, List *table)
 {
     ListElement *temp = head(table);
     while (temp != nullptr)
@@ -81,15 +84,57 @@ void counterOfWods(string key, List *table)
     }
 }
 
-void addToHashTable(HashTable *table, string value)
+void addToHashTable(HashTable *table, const string &value)
 {
-    Value *temp = new Value;
-    temp->count = 1;
-    temp->key = value;
     if (exist(value, table)) {
-        counterOfWods(value, table->table[HashFunction(value) % table->size]);
+        counterOfWords(value, table->table[hashFunction(value) % table->size]);
     }
     else {
-        insert(table->table[HashFunction(value) % table->size], temp);
+        Value *temp = new Value;
+        temp->count = 1;
+        temp->key = value;
+        insert(table->table[hashFunction(value) % table->size], temp);
     }
 }
+
+int maxLengthOfList(HashTable *table) 
+{
+    int maxLength = 0;
+    int lengthOfList = 0;
+    for (int i = 0; i != table->size; i++)
+    {
+        ListElement *temp = head(table->table[i]);
+        while (temp != nullptr)
+        {
+            lengthOfList++;
+            temp = nextElement(temp);
+        }
+        if (lengthOfList > maxLength) 
+        {
+            maxLength = lengthOfList;
+        }
+        lengthOfList = 0;
+    }
+    return maxLength;
+}
+
+double averageLengthOfList(HashTable *table) 
+{
+    double averageLength = 0;
+    double lengthOfList = 0;
+    for (int i = 0; i != table->size; i++)
+    {
+        ListElement *temp = head(table->table[i]);
+        while (temp != nullptr)
+        {
+            lengthOfList++;
+            temp = nextElement(temp);
+        }
+        averageLength += lengthOfList;
+        lengthOfList = 0;
+    }
+    //cout << "(всего сегментов : " << averageLength << ") ";
+    averageLength = averageLength / table->size;
+    return averageLength;
+}
+

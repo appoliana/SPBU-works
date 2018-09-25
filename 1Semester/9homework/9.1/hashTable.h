@@ -1,6 +1,6 @@
-#pragma once;
-#include "list.h";
-#include <string>;
+#pragma once
+#include "list.h"
+#include <string>
 
 struct HashTable;
 
@@ -8,19 +8,22 @@ struct HashTable;
 HashTable *createHashTable(int size);
 
 // проверка на существование элемента 
-bool exist(std::string value, HashTable *table);
+bool exist(const std::string &value, HashTable *table);
 
 // удаление
 void deleteHashTable(HashTable *table);
 
 // добавление в хэш-таблицу
-void addToHashTable(HashTable *table, std::string value);
+void addToHashTable(HashTable *table, const std::string &value);
 
 // печать
 void printHashTable(HashTable *table);
 
-// iувеличение счетчика
-void counterOfWods(std::string key, List *bucket);
+// увеличение счетчика
+void counterOfWords(const std::string &key, List *bucket);
 
-// значение хэш-функции
-int HashFunction(ElementType value);
+// подсчет наибольшей длины списка в сегменте таблицы
+int maxLengthOfList(HashTable *table);
+
+// подсчет средней длины списка в сегменте таблицы
+double averageLengthOfList(HashTable *table);

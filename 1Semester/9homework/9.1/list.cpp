@@ -20,6 +20,8 @@ List *createList()
 {
     List *result = new List;
     ListElement *sentinel = new ListElement;
+    sentinel->value = nullptr;
+    sentinel->next = nullptr;
     result->head = sentinel;
     result->end = sentinel;
     result->end->next = nullptr;
@@ -49,6 +51,7 @@ void clear(List *list)
     {
         ListElement *temp2 = temp;
         temp = temp->next;
+        delete temp2->value;
         delete temp2;
     }
     delete list;
