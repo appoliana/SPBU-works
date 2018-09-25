@@ -9,3 +9,5 @@ before_build:
 
 build:
   project: 2Semester/EventMap/EventMap.sln
+
+tests: off
