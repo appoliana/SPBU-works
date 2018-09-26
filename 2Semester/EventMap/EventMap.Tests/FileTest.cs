@@ -4,16 +4,24 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace EventMap.Tests
 {
+    /// <summary>
+    /// Класс FileTest.
+    /// </summary>
     [TestClass]
     public class FileTest
     {
+        /// <summary>
+        /// Метод, который тестирует файл на чтение и запись.
+        /// </summary>
         [TestMethod]
         public void IsFileCanBeReadAndWrite()
         {
-            FileStream file = new FileStream(@"C:\Users\Пользователь\Desktop\2semester\EventMap\EventMap\bin\Debug\Map.txt", FileMode.Open, FileAccess.ReadWrite);
-            Assert.AreEqual(file.CanRead, true);
-            Assert.AreEqual(file.CanWrite, true);
-            file.Close();
+            using (FileStream file = new FileStream(@"Map.txt", FileMode.Open, FileAccess.ReadWrite))
+            {
+                Assert.AreEqual(file.CanRead, true);
+                Assert.AreEqual(file.CanWrite, true);
+                file.Close();
+            }
         }
     }
 }

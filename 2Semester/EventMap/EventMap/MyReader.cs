@@ -7,43 +7,53 @@ using System.Threading.Tasks;
 
 namespace EventMap
 {
+    /// <summary>
+    /// Класс MyReader.
+    /// </summary>
     public class MyReader
     {
         public int ourDogLine;
         public int ourDogCollumn;
 
-        public string[] ReadMapFromFile()
+        /// <summary>
+        /// Метод, который читает карту из файла.
+        /// </summary>
+        /// <returns></returns>
+        public (string[], int, int) ReadMapFromFile()
         {
-            FileStream file = new FileStream(@"C:\Users\Пользователь\Desktop\2semester\EventMap\EventMap\bin\Debug\Map.txt", FileMode.Open, FileAccess.ReadWrite);
-            StreamReader reader = new StreamReader(file, System.Text.Encoding.Default);
-
-            string line;
-            int numberOfLines = 0;
-            string[] arrayOfMap = new string[6];
-
-            while ((line = reader.ReadLine()) != null)
+            using (FileStream file = new FileStream(@"Map.txt", FileMode.Open, FileAccess.ReadWrite))
             {
-                arrayOfMap[numberOfLines] = line;
-                numberOfLines++;
-            }
+                StreamReader reader = new StreamReader(file, System.Text.Encoding.Default);
 
-            int numberOfCollumns = arrayOfMap[0].Length;
 
-            ourDogLine = 0;
-            ourDogCollumn = 0;
-            for (int i = 0; i < numberOfLines; ++i)
-            {
-                for (int j = 0; j < numberOfCollumns; ++j)
+                string line;
+                int numberOfLines = 0;
+                string[] arrayOfMap = new string[6];
+
+                while ((line = reader.ReadLine()) != null)
                 {
-                    if (System.Convert.ToChar(arrayOfMap[i].ElementAt(j)) == '@')
+                    arrayOfMap[numberOfLines] = line;
+                    numberOfLines++;
+                }
+
+                int numberOfCollumns = arrayOfMap[0].Length;
+
+                ourDogLine = 0;
+                ourDogCollumn = 0;
+                for (int i = 0; i < numberOfLines; ++i)
+                {
+                    for (int j = 0; j < numberOfCollumns; ++j)
                     {
-                        ourDogLine = i;
-                        ourDogCollumn = j;
-                        break;
+                        if (System.Convert.ToChar(arrayOfMap[i].ElementAt(j)) == '@')
+                        {
+                            ourDogLine = i;
+                            ourDogCollumn = j;
+                            break;
+                        }
                     }
                 }
+                return (arrayOfMap, ourDogLine, ourDogCollumn);
             }
-            return arrayOfMap;
         }
     }
 }
