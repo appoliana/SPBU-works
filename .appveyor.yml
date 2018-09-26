@@ -1,0 +1,11 @@
+image: Visual Studio 2017
+
+branches:
+ only:
+  - genericList
+
+before_build:
+  - nuget restore 2Semester/GenericList/GenericList.sln
+
+build:
+  project: 2Semester/GenericList/GenericList.sln
