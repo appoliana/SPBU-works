@@ -1,13 +1,11 @@
 image: Visual Studio 2017
-build: off
-branches:
-    only:
-    - genericList
-environment:
-    matrix:
-    - SOLUTION_PATH: GenericList
-before_build:
-    - nuget restore %SOLUTION_PATH%\GenericList.sln
-build_script:
-    - msbuild %SOLUTION_PATH%\GenericList.sln
 
+branches:
+ only:
+  - appveyor
+
+before_build:
+  - nuget restore 2Semester/EventMap/EventMap.sln
+
+build:
+  project: 2Semester/EventMap/EventMap.sln
