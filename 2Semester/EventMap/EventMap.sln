@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventMap", "EventMap\EventMap.csproj", "{BCEF1EE7-07A7-4E05-9DD1-7FACA4572683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventMap.Tests", "EventMap.Tests\EventMap.Tests.csproj", "{1D002B0E-B4C0-473D-8937-C734E0D9AECA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCEF1EE7-07A7-4E05-9DD1-7FACA4572683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCEF1EE7-07A7-4E05-9DD1-7FACA4572683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCEF1EE7-07A7-4E05-9DD1-7FACA4572683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCEF1EE7-07A7-4E05-9DD1-7FACA4572683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D002B0E-B4C0-473D-8937-C734E0D9AECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D002B0E-B4C0-473D-8937-C734E0D9AECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D002B0E-B4C0-473D-8937-C734E0D9AECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D002B0E-B4C0-473D-8937-C734E0D9AECA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7E23639-9CA0-47C8-B241-88684B18697D}
+	EndGlobalSection
+EndGlobal
