@@ -1,0 +1,12 @@
+image: Visual Studio 2017
+
+branches:
+ only:
+  - appveyor
+
+before_build:
+  - nuget restore 2Semester/EventMap/EventMap.sln
+
+build:
+  project: 2Semester/EventMap/EventMap.sln
+
