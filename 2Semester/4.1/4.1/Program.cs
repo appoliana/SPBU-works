@@ -11,13 +11,6 @@ namespace TreeExpression
     {
         static void Main(string[] args)
         {
-            var tree = new TreeExpression.Tree();
-            string expression = System.IO.File.ReadAllText("expression.txt");
-            Console.WriteLine(expression);
-            Read.ReadExpressionFromString(tree, expression);
-            var i = tree.CountTree();
-            Console.WriteLine(i);
-            Console.ReadLine();
         }
     }
 }
