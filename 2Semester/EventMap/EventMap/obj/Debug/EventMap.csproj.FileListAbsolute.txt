@@ -1,8 +1,0 @@
-C:\Users\Пользователь\Desktop\2semester\EventMap\EventMap\obj\Debug\EventMap.csprojAssemblyReference.cache
-C:\Users\Пользователь\Desktop\2semester\EventMap\EventMap\obj\Debug\EventMap.csproj.CoreCompileInputs.cache
-C:\Users\Пользователь\Desktop\2semester\EventMap\EventMap\bin\Debug\EventMap.exe.config
-C:\Users\Пользователь\Desktop\2semester\EventMap\EventMap\bin\Debug\EventMap.exe
-C:\Users\Пользователь\Desktop\2semester\EventMap\EventMap\bin\Debug\EventMap.pdb
-C:\Users\Пользователь\Desktop\2semester\EventMap\EventMap\obj\Debug\EventMap.exe
-C:\Users\Пользователь\Desktop\2semester\EventMap\EventMap\obj\Debug\EventMap.pdb
-C:\Users\Пользователь\Desktop\2semester\EventMap\EventMap\bin\Debug\Map.txt
