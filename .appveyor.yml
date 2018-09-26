@@ -2,10 +2,10 @@ image: Visual Studio 2017
 
 branches:
  only:
-  - appveyor
+  - genericList
 
 before_build:
-  - nuget restore 2Semester/EventMap/EventMap.sln
+  - nuget restore 2Semester/GenericList/GenericList.sln
 
 build:
-  project: 2Semester/EventMap/EventMap.sln
+  project: 2Semester/GenericList/GenericList.sln
